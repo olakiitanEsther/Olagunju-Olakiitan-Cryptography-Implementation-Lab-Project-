@@ -18,7 +18,8 @@ sudo apt update && sudo apt upgrade -y
 ```
 
 **Evidence:**
-[ DROP YOUR "UPDATED KALI SYSTEM" SCREENSHOT HERE ]
+
+![Kali Linux System Update](Kali%20Update%20&Upgrade%20Step%201.jpeg)
 
 ---
 
@@ -31,7 +32,8 @@ cat confidential.txt
 ```
 
 **Evidence:**
-[ DROP YOUR "ORIGINAL FILE" SCREENSHOT HERE ]
+
+![Confidential File Creation](creation%20of%20realistic%20simulation%20file%20step%202.jpeg)
 
 ---
 
@@ -45,7 +47,8 @@ The text file was encrypted using the AES-256-CBC standard with a password to sc
   ```
 
 **Evidence:**
-[ DROP YOUR "SYMMETRICALLY ENCRYPTED FILE" SCREENSHOT HERE ]
+
+![Symmetric Encryption Ciphertext](symmetric%20encryption%20locking%20with%20password%20step%203.jpeg)
 
 * **Symmetric Decryption Command:**
   ```bash
@@ -54,7 +57,8 @@ The text file was encrypted using the AES-256-CBC standard with a password to sc
   ```
 
 **Evidence:**
-[ DROP YOUR "SYMMETRICALLY DECRYPTED FILE" SCREENSHOT HERE ]
+
+![Symmetric Decryption Verified Plaintext](Symmetrically%20Decrypted%20File%204.jpeg)
 
 ---
 
@@ -69,7 +73,8 @@ A matching 2048-bit RSA key pair consisting of a private key (to unlock data) an
   ```
 
 **Evidence:**
-[ DROP YOUR "GENERATED PUBLIC/PRIVATE KEY PAIR" SCREENSHOT HERE ]
+
+![Generated Key Pair Payload Verification](Generated%20PublicPrivate%20Key%20Pair%205.jpeg)
 
 * **Asymmetric Encryption (Using Public Key):**
   ```bash
@@ -78,7 +83,8 @@ A matching 2048-bit RSA key pair consisting of a private key (to unlock data) an
   ```
 
 **Evidence:**
-[ DROP YOUR "ASYMMETRICALLY ENCRYPTED FILE" SCREENSHOT HERE ]
+
+![Asymmetric Public Key Encryption](Asymmetrically%20Encrypted%20File%206.jpeg)
 
 * **Asymmetric Decryption (Using Private Key):**
   ```bash
@@ -87,7 +93,8 @@ A matching 2048-bit RSA key pair consisting of a private key (to unlock data) an
   ```
 
 **Evidence:**
-[ DROP YOUR "ASYMMETRICALLY DECRYPTED FILE" SCREENSHOT HERE ]
+
+![Asymmetric Private Key Decryption Verified Plaintext](Asymmetrically%20Decrypted%20File%207.jpeg)
 
 ---
 
@@ -95,4 +102,9 @@ A matching 2048-bit RSA key pair consisting of a private key (to unlock data) an
 
 ### Network Error during System Update (400 Bad Request)
 * **Problem:** While running `sudo apt update`, the terminal threw multiple "400 Bad Request" errors and failed to download packages. This occurred because Kali tries to download multiple files simultaneously by default, which overwhelmed the internet connection network.
+
+**Error Reference Material:**
+
+![HTTP Pipelining 400 Bad Request Error](bad%20request.jpeg)
+
 * **Resolution:** This issue was resolved by adding a configuration rule (`-o Acquire::http::Pipeline-Depth=0`) to the command line. This forced the system to download files sequentially, completely resolving the network bottleneck and allowing the system update to finish successfully.
